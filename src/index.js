@@ -17,17 +17,30 @@ import FrameThree from "./components/FrameThree";
 import products3 from "./bd/products3";
 import panoram3 from "./assets/images/part3.jpg";
 
-render(<App />, document.querySelector("#root"));
+render(
+    <App>
+        <FrameOne
+            contentPhoto={panoram1}
+            coords={products1} />,
+        <FrameTwo
+            contentPhoto={panoram2}
+            coords={products2} />,
+        <FrameThree
+            contentPhoto={panoram3}
+            coords={products3} />,
+    </App>,
+    document.querySelector("#root")
+);
 
-render(<FrameOne
-    contentPhoto={panoram1}
-    coords={products1} />,
-    document.querySelector("#frameOne"));
-render(<FrameTwo
-    contentPhoto={panoram2}
-    coords={products2} />,
-    document.querySelector("#frameTwo"));
-render(<FrameThree
-    contentPhoto={panoram3}
-    coords={products3} />,
-    document.querySelector("#frameThree"));
+// render(<FrameOne
+//     contentPhoto={panoram1}
+//     coords={products1} />,
+//     document.querySelector("#frameOne"));
+// render(<FrameTwo
+//     contentPhoto={panoram2}
+//     coords={products2} />,
+//     document.querySelector("#frameTwo"));
+// render(<FrameThree
+//     contentPhoto={panoram3}
+//     coords={products3} />,
+//     document.querySelector("#frameThree"));

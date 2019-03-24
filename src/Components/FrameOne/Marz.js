@@ -33,7 +33,7 @@ class Marz extends Component {
 
     containerMarz = React.createRef();
 
-    componentDidMount(){
+    componentDidMount() {
         const container = this.containerMarz.current;
         const viewer = new Marzipano.Viewer(container, viewerOpts);
         const source = Marzipano.ImageUrlSource.fromString(this.props.contentPhoto);

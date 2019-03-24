@@ -9,7 +9,7 @@ class App extends Component {
     render() {
         return(
             <Fragment>
-                <Layouts/>
+                {this.props.children}
             </Fragment>
         )
     }
