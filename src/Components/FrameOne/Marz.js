@@ -106,13 +106,11 @@ class Marz extends Component {
         const { showModal, goods, countOrder } = this.state;
         return(
             <React.Fragment>
-                <div>
-                    <div className="marzipano-wrapper">
-                        <div className="marzipano-box">
-                            <div
-                                ref={this.containerMarz}
-                                className="marzipano" />
-                        </div>
+                <div className="marzipano-wrapper">
+                    <div className="marzipano-box">
+                        <div
+                            ref={this.containerMarz}
+                            className="marzipano" />
                     </div>
                 </div>
                 <Modal

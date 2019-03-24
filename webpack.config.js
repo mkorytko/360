@@ -16,13 +16,6 @@ const base = {
                 loader: "babel-loader",
             },
             {
-                test: /\.css/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                ]
-            },
-            {
                 test: /\.(png|gif|jpe?g)$/,
                 loader: 'file-loader',
                 options: {

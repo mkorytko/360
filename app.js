@@ -4,6 +4,7 @@ const app = express();
 
 app.use("/assets", express.static("public/assets"));
 app.use("/js", express.static("public/js"));
+app.use("/styles", express.static("public/styles"));
 
 app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "./public/index.html"));
