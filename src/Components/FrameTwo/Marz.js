@@ -25,7 +25,6 @@ class Marz extends Component {
     state = {
         spot: null,
         goodsModal: false,
-        content: [],
         goods: null,
         countOrder: 0,
         showModal: false,
@@ -80,15 +79,6 @@ class Marz extends Component {
 
     setShowModal = () => this.setState((state) => ({ showModal: !state.showModal, countOrder: 0 }))
 
-    countMinus = () => {
-        this.setState((state) => ({ countOrder: state.countOrder > 0 ? state.countOrder - 1 : 0 }));
-    }
-
-    countPlus = () => {
-        const { goods } = this.state;
-        this.setState((state) => ({ countOrder: state.countOrder < goods.stock ? state.countOrder + 1 : goods.stock }));
-    }
-
     submitOrder = () => {
         const { goods, countOrder } = this.state;
         const result = {
@@ -114,9 +104,6 @@ class Marz extends Component {
                     </div>
                 </div>
                 <Modal
-                    countMinus={this.countMinus}
-                    countPlus={this.countPlus}
-                    checkBuyingCount={this.checkBuyingCount}
                     submitOrder={this.submitOrder}
                     countOrder={countOrder}
                     goods={goods}

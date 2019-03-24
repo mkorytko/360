@@ -1,4 +1,6 @@
 import React from "react";
+import modalBG from "../../assets/icons/modalBG.svg";
+
 
 export default function Modal(
     {
@@ -13,7 +15,10 @@ export default function Modal(
                 showModal && (
                     <div className="modal-wrapper">
                             <div className="modal-window-header">
-                                <h4 className="text-center">Добавление в корзину</h4>
+                                <h4>Информация о товаре</h4>
+                                <i
+                                    onClick={closeModal}
+                                    className="modal-header-btn_cancel" />
                             </div>
                             <div className="modal-window-body">
                                 <img
@@ -23,80 +28,70 @@ export default function Modal(
                                 <div className="modal-window-card">
                                     <section className="modal-body-goods_header">
                                         <h4>{goods.name}</h4>
-                                        <p>
-                                            ({goods.subName})
-                                        </p>
-                                        <p>
-                                            {goods.brand}
-                                            {" "}
-                                            /
-                                            {" "}
-                                            {goods.country}
-                                        </p>
-                                    </section>
-                                    <div className="modal-body-goods_body">
-                                        <p>
-                                            {goods.cost.toFixed(2)}
-                                            {" "}
-                                            &#8381;
-                                            {" ("}
-                                            {goods.costFloat}
-                                            {") "}
-                                        </p>
-                                    </div>
-                                    <hr/>
-                                    <div className="modal-body-goods_footer">
-                                        <div className="d-inline-block">
-                                            В наличии:
-                                            {" "}
-                                            {goods.stock}
-                                            шт.
-                                            <div className="count-group_btn">
-                                                <button
-                                                    onClick={countMinus}
-                                                    type="button"
-                                                    className="count-goods-minus d-inline-block">
-                                                    -
-                                                </button>
-                                                <span className="count-result d-inline-block">
-                                                    {countOrder}
+                                        <ul>
+                                            <li className="modal-body-goods_card">
+                                                <span className="card-name_input">
+                                                    Название:
                                                 </span>
-                                                <button
-                                                    onClick={countPlus}
-                                                    type="button"
-                                                    className="count-goods-plus d-inline-block">
-                                                    +
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                                <span className="card-name_item">
+                                                    {goods.subName}
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span className="card-name_input">
+                                                    Категория:
+                                                </span>
+                                                <span className="card-name_item">
+                                                    {goods.category}
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span className="card-name_input">
+                                                    Страна-производитель:
+                                                </span>
+                                                <span className="card-name_item">
+                                                    {goods.country}
+                                                </span>
+                                            </li>
+                                            {goods.sizeItem && (
+                                                <li>
+                                                    <span className="card-name_input">
+                                                        Объём/Вес:
+                                                    </span>
+                                                    <span className="card-name_item">
+                                                        {goods.sizeItem}
+                                                    </span>
+                                                </li>
+                                            )}
+                                            <li>
+                                                <span className="card-name_input">
+                                                    Наличие:
+                                                </span>
+                                                <span className="card-name_item">
+                                                    {goods.stock}{goods.measure}.
+                                                </span>
+                                            </li>
+                                            <li>
+                                                <span className="card-name_input">
+                                                    Цена:
+                                                </span>
+                                                <span className="card-name_item">
+                                                    {goods.cost.toFixed(2)}
+                                                    {" "}
+                                                    &#8381;
+                                                    {" ("}
+                                                    {goods.costFloat}
+                                                    {goods.measure}
+                                                    {") "}
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </section>
                                 </div>
                             </div>
-                            <div className="modal-window-footer">
-                                <div className="modal-footer-buy_info">
-                                    <p>На сумму:
-                                        {" "}
-                                        {parseFloat((countOrder * goods.cost).toFixed(2))}
-                                        {" "}
-                                        &#8381;
-                                    </p>
-                                </div>
-                                <div className="modal-footer-btn_group">
-                                    <button
-                                        disabled={countOrder === 0 ? true : false}
-                                        onClick={submitOrder}
-                                        className="modal-footer-btn_submit"
-                                        type="button">
-                                        В корзину
-                                    </button>
-                                    <button
-                                        onClick={closeModal}
-                                        className="modal-footer-btn_cancel"
-                                        type="button">
-                                        Отмена (Esc)
-                                    </button>
-                                </div>
-                            </div>
+                            <img
+                                className="modal-background"
+                                src={modalBG} alt="modal-background"/>
                     </div>)
             }
         </div>

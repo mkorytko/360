@@ -16,7 +16,9 @@ export default [
             height: 50,
         },
         cost: 801,
-        costFloat: "1уп.",
+        costFloat: "1",
+        measure: "шт",
+        sizeItem: "",
         src: "https://mytoys.scene7.com/is/image/myToys/ext/7221579-04.jpg",
     },
     {
@@ -36,7 +38,9 @@ export default [
             height: 70,
         },
         cost: 1500,
-        costFloat: "1уп.",
+        costFloat: "1",
+        measure: "уп",
+        sizeItem: "6шт.",
         src: "https://img.panama.ua/products_pictures/e/en/enu64wm4q5vm.jpg",
     },
     {
@@ -56,7 +60,9 @@ export default [
             height: 80,
         },
         cost: 400,
-        costFloat: "1уп.",
+        costFloat: "1",
+        measure: "шт",
+        sizeItem: "",
         src: "https://mytoys.scene7.com/is/image/myToys/ext/5002512-01.jpg",
     },
 ];

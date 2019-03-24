@@ -50,6 +50,11 @@ html, body, #root{
 .sales{
     border: 1.5px solid red;
 }
+.sales span{
+    display: inline-block;
+    transform: rotate(90deg);
+    font-size: 1.5rem;
+}
 img{
     display: block;
     width: 100%;
@@ -78,11 +83,10 @@ img{
 }
 .modal-wrapper{
     position: relative;
-    border: 2.5px solid rgba(0,0,0,0.8);
-    border-radius: 5px;
-    width: 400px;
+    width: 500px;
     background: white;
     display: flex;
+    padding: 10px 25px 45px 25px;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -96,32 +100,74 @@ img{
     text-align: center;
 }
 .modal-window-header{
-    position: relative;
     line-height: 32px;
     height: 32px;
     border-bottom: 1px solid black;
 }
+i.modal-header-btn_cancel{
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    text-align: center;
+    transition: background 0.2s;
+}
+i.modal-header-btn_cancel:after{
+    content: '+';
+    transform: rotate(45deg);
+    text-transform: none;
+    font-size: 1.4rem;
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+}
+i.modal-header-btn_cancel:hover{
+    background: #cfcfcf;
+}
+
+.modal-window-header h4{
+    font-size: 1.1rem;
+}
 .modal-window-body{
-    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 .modal-window-card{
-    width: 70%;
+    width: 65%;
+    align-self: stretch;
 }
-.modal-body-goods_header,
-.modal-body-goods_body{
-    text-align: center;
+
+.modal-body-goods_header{
+    padding: 0 7px;
 }
 .modal-body-goods_header h4{
     font-size: 1.2rem;
+    margin: 5px 0;
 }
 .modal-body-goods_header p{
     font-size: 0.9rem;
+    margin-top: 5px;
+}
+.modal-body-goods_body p{
+    margin-top: 5px;
+}
+.modal-body-goods_header ul li{
+    display: flex;
+    justify-content: space-between;
 }
 .modal-window-image{
-    width: 30%;
+    width: 35%;
+}
+.modal-window-image_canvas{
+    width: 200px;
 }
 .modal-body-goods_body{
     font-size: 1.2rem;
@@ -136,45 +182,14 @@ img{
     padding: 2px 10px 5px 10px;
     border-top: 1px solid black;
 }
-.modal-footer-btn_cancel{
-    margin-left: 5px;;
-}
+
 .modal-footer-buy_info{
     font-size: 0.9rem;
 }
-.count-group_btn{
-    display: inline-block;
-    margin-left: 10px;
-    border-radius: 5px;
-}
-.count-goods-minus,
-.count-goods-plus{
-    width: 25px;
-    border: none;
-    transition: background 0.2s;
-}
-.count-goods-minus{
-    border-radius: 5px 0 0 5px;
-}
-.count-goods-plus{
-    border-radius: 0 5px 5px 0;
-}
-.count-goods-minus:hover,
-.count-goods-plus:hover{
-    background: rgba(0, 0, 0, 0.3);
-}
-.count-goods-minus:focus,
-.count-goods-plus:focus{
-    outline: none;
-}
-.count-result{
-    margin: 0 10px;
+img.modal-background{
+    height: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 /* ^^ Modal ^^ */
-header, footer{
-    background: rgb(198, 235, 236);
-    text-align: center;
-}
-main{
-    background: #ebe8e8;
-}
