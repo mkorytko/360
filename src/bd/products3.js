@@ -1,0 +1,62 @@
+export default [
+    {
+        id: 0,
+        name: "Конструктор",
+        subName: "Боевой набор Империи",
+        category: "Детские игрушки",
+        brand: "Lego",
+        country: "Китай",
+        stock: 3,
+        shift: {
+            yaw: -205 * Math.PI / 180,
+            pitch: 0.48,
+        },
+        size: {
+            width: 50,
+            height: 50,
+        },
+        cost: 801,
+        costFloat: "1уп.",
+        src: "https://mytoys.scene7.com/is/image/myToys/ext/7221579-04.jpg",
+    },
+    {
+        id: 1,
+        name: "Подгузники",
+        subName: "Трусики",
+        category: "Средства гигиены",
+        brand: "P&G",
+        country: "Россия",
+        stock: 15,
+        shift: {
+            yaw: 38 * Math.PI / 180,
+            pitch: -0.1,
+        },
+        size: {
+            width: 120,
+            height: 70,
+        },
+        cost: 1500,
+        costFloat: "1уп.",
+        src: "https://img.panama.ua/products_pictures/e/en/enu64wm4q5vm.jpg",
+    },
+    {
+        id: 2,
+        name: "Конструктор",
+        subName: "Duplo",
+        category: "Детские игрушки",
+        brand: "Lego",
+        country: "Китай",
+        stock: 5,
+        shift: {
+            yaw: -205 * Math.PI / 180,
+            pitch: -0.15,
+        },
+        size: {
+            width: 80,
+            height: 80,
+        },
+        cost: 400,
+        costFloat: "1уп.",
+        src: "https://mytoys.scene7.com/is/image/myToys/ext/5002512-01.jpg",
+    },
+];

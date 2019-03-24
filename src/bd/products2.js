@@ -1,0 +1,62 @@
+export default [
+    {
+        id: 0,
+        name: "Джин-тоник",
+        subName: "Red-Devil",
+        category: "Слабоалкогольные напитки",
+        brand: "ХимПанкЗавод",
+        country: "Россия",
+        stock: 16,
+        shift: {
+            yaw: 62 * Math.PI / 180,
+            pitch: 0.07,
+        },
+        size: {
+            width: 30,
+            height: 40,
+        },
+        cost: 92,
+        costFloat: "1кг",
+        src: "https://produktoff.com/static/upload/goods/30/8630_square.jpg",
+    },
+    {
+        id: 1,
+        name: "Детское шампанское",
+        subName: "Тропический вкус",
+        category: "Безалкогольные напитки",
+        brand: "НИИ им. Калашникова",
+        country: "Россия",
+        stock: 15,
+        shift: {
+            yaw: -3 * Math.PI / 180,
+            pitch: -0.03,
+        },
+        size: {
+            width: 60,
+            height: 130,
+        },
+        cost: 220,
+        costFloat: "1шт.",
+        src: "http://bioveld.com.ua/wp-content/uploads/2016/10/Robby-Bubble-Tropical.jpg",
+    },
+    {
+        id: 2,
+        name: "Лимонад",
+        subName: "Coca-Cola zero",
+        category: "Напиток безалкогольный",
+        brand: "PepsiCo",
+        country: "Россия",
+        stock: 30,
+        shift: {
+            yaw: -155 * Math.PI / 180,
+            pitch: 0.3,
+        },
+        size: {
+            width: 80,
+            height: 80,
+        },
+        cost: 75,
+        costFloat: "1.5л",
+        src: "https://cdn11.bigcommerce.com/s-0294a/images/stencil/1280x1280/products/190/7221/coke_zero_2L_final__29204.1525937732.jpg?c=2&imbypass=on",
+    },
+];
