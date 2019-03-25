@@ -1,19 +1,11 @@
-h1, h2, h3, h4{
-    margin: 0;
+.modal-body-goods_name{
+    margin: 5px 0;
+    font-size: 1.1rem;
 }
-ul, p{
+.modal-body-goods_list{
+    list-style: none;
     margin: 0;
     padding: 0;
-}
-hr{
-    margin: 5px;
-}
-ul{
-    list-style: none;
-}
-html, body, #root{
-    width: 100%;
-    height: 100%;
 }
 .marzipano-wrapper{
     text-align: left;
@@ -24,6 +16,16 @@ html, body, #root{
     height: 500px;
     position: relative;
 }
+#pannellum-box{
+    width: 800px;
+    height: 500px;
+    position: relative;
+    margin: auto;
+}
+#pannellum-wrapper{
+    width: 100%;
+    height: 100%;
+}
 .marzipano{
     position: absolute;
     height: 100%;
@@ -33,8 +35,6 @@ html, body, #root{
     right: 0;
     bottom: 0;
 }
-
-/* signs */
 .hotspot{
     text-align: center;
     color: #ffffff;
@@ -45,21 +45,16 @@ html, body, #root{
     background: rgba(250, 250, 250, 0.2);
 }
 .in-sale{
-    border: 1.5px solid lime;
+    border: 2px solid lime;
 }
 .sales{
-    border: 1.5px solid red;
+    border: 2px solid red;
 }
 .sales span{
     display: inline-block;
     transform: rotate(90deg);
     font-size: 1.5rem;
 }
-img{
-    display: block;
-    width: 100%;
-}
-/* Modal*/
 .modal-window{
     position: fixed;
     left: 0;
@@ -86,7 +81,7 @@ img{
     width: 500px;
     background: white;
     display: flex;
-    padding: 10px 25px 45px 25px;
+    padding: 10px 25px 25px 25px;
     flex-direction: column;
     justify-content: space-around;
 }
@@ -104,7 +99,7 @@ img{
     height: 32px;
     border-bottom: 1px solid black;
 }
-i.modal-header-btn_cancel{
+.modal-header-btn_cancel{
     position: absolute;
     cursor: pointer;
     right: 0;
@@ -115,7 +110,7 @@ i.modal-header-btn_cancel{
     text-align: center;
     transition: background 0.2s;
 }
-i.modal-header-btn_cancel:after{
+.modal-header-btn_cancel:after{
     content: '+';
     transform: rotate(45deg);
     text-transform: none;
@@ -128,12 +123,8 @@ i.modal-header-btn_cancel:after{
     height: 32px;
     text-align: center;
 }
-i.modal-header-btn_cancel:hover{
+.modal-header-btn_cancel:hover{
     background: #cfcfcf;
-}
-
-.modal-window-header h4{
-    font-size: 1.1rem;
 }
 .modal-window-body{
     display: flex;
@@ -148,23 +139,18 @@ i.modal-header-btn_cancel:hover{
 .modal-body-goods_header{
     padding: 0 7px;
 }
-.modal-body-goods_header h4{
+.modal-window-header_info{
     font-size: 1.2rem;
-    margin: 5px 0;
+    margin: 0;
 }
-.modal-body-goods_header p{
-    font-size: 0.9rem;
-    margin-top: 5px;
-}
-.modal-body-goods_body p{
-    margin-top: 5px;
-}
-.modal-body-goods_header ul li{
+.modal-body-goods_list-item{
     display: flex;
     justify-content: space-between;
+    list-style: none;
 }
 .modal-window-image{
     width: 35%;
+    display: block;
 }
 .modal-window-image_canvas{
     width: 200px;
@@ -186,10 +172,60 @@ i.modal-header-btn_cancel:hover{
 .modal-footer-buy_info{
     font-size: 0.9rem;
 }
-img.modal-background{
+.modal-window-background_style{
     height: 25px;
     position: absolute;
     bottom: 0;
+    width: 100%;
     left: 0;
+    width: 100%;
+    display: block;
 }
-/* ^^ Modal ^^ */
+.prestart-wrapper-panorams{
+    width: 100%;
+    height: 100%;
+    background-color: #2361a0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s , visibility 0.3s, background-color 1s ease;
+}
+.prestart_show{
+    opacity: 1;
+    visibility: visible;
+}
+.prestart_hide{
+    opacity: 0;
+    visibility: hidden;
+}
+.prestart-panorams_start{
+    border: none;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: inset 5px -18px 28px black;
+    transition: box-shadow 0.5s ease-out;
+}
+.prestart-panorams_start:hover{
+    box-shadow: inset 0px -11px 15px #767575;
+}
+.prestart-panorams_start:focus{
+    outline: none;
+}
+.marzipano-hide_mode{
+    visibility: hidden;
+}
+.marzipano-show_mode{
+    visibility: visible;
+}
+.prestart-panorams_play{
+    width: 30px;
+    height: 30px;
+    transform: rotate3d(-28, -37, -3, 7deg)translate3d(12px, -11px, -100px);
+    transition: transform 0.5s ease-out;
+}
+.prestart-panorams_start:hover .prestart-panorams_play{
+    transform: rotate3d(21, 25, 0, 0deg)translate3d(3px, 0px, 0px)
+}

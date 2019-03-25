@@ -1,20 +1,20 @@
-const path = require("path");
-const HTML = require("html-webpack-plugin");
+const path = require('path');
+const HTML = require('html-webpack-plugin');
 
 const base = {
     entry: {
-        products: "./src/index.js",
-        flowers: "./src/flower.js"
+        products: './src/index.js',
+        flowers: './src/flower.js',
     },
     output: {
-        path: path.resolve(__dirname, "public"),
+        path: path.resolve(__dirname, 'public'),
         filename: 'js/[name].bundle.js',
     },
-    module:{
+    module: {
         rules: [
             {
                 test: /.js/,
-                loader: "babel-loader",
+                loader: 'babel-loader',
             },
             {
                 test: /\.(png|gif|jpe?g|svg)$/,
@@ -23,14 +23,14 @@ const base = {
                     name: 'assets/images/[name].[ext]',
                 },
             },
-        ]
+        ],
     },
     plugins: [
         new HTML({
-            filename: "index.html",
-            template: "./src/index.html",
+            filename: 'index.html',
+            template: './src/index.html',
         }),
-    ]
+    ],
 };
 
 module.exports = base;
