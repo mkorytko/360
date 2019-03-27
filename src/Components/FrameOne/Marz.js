@@ -82,11 +82,14 @@ class Marz extends Component {
 
     render() {
         const { showModal, goods, preStart } = this.state;
+        const { playBtn, modalBG, prestartBg } = this.props;
         return (
             <React.Fragment>
                 <div className="marzipano-wrapper">
                     <div className="marzipano-box">
                         <Prestart
+                            prestartBg={prestartBg}
+                            playBtn={playBtn}
                             preStart={preStart}
                             showPanoram={this.showPanoram} />
                         <div
@@ -95,6 +98,7 @@ class Marz extends Component {
                     </div>
                 </div>
                 <Modal
+                    modalBG={modalBG}
                     goods={goods}
                     showModal={showModal}
                     closeModal={this.setShowModal} />

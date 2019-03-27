@@ -27,6 +27,9 @@ let scene;
 class Flower extends Component {
     static propTypes = {
         contentPhoto: PropTypes.string,
+        modalBG: PropTypes.string,
+        playBtn: PropTypes.string,
+        prestartBg: PropTypes.string,
         coords: PropTypes.array,
     }
 
@@ -105,12 +108,15 @@ class Flower extends Component {
 
     render() {
         const { showModal, goods, preStart } = this.state;
+        const { modalBG, playBtn, prestartBg } = this.props;
         return (
             <React.Fragment>
                 <div className="marzipano-wrapper">
                     <div className="marzipano-box">
                         <div className="marzipano-box">
                             <Prestart
+                                prestartBg={prestartBg}
+                                playBtn={playBtn}
                                 preStart={preStart}
                                 showPanoram={this.showPanoram} />
                             <div
@@ -120,6 +126,7 @@ class Flower extends Component {
                     </div>
                 </div>
                 <FlowerModal
+                    modalBG={modalBG}
                     goods={goods}
                     showModal={showModal}
                     closeModal={this.setShowModal} />

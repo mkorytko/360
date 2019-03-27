@@ -17,13 +17,31 @@ const base = {
                 loader: 'babel-loader',
             },
             {
-                test: /\.(png|gif|jpe?g|svg)$/,
+                test: /\.jpe?g$/,
                 loader: 'file-loader',
                 options: {
                     name: 'assets/images/[name].[ext]',
                 },
             },
+            {
+                test: /\.(png|svg)$/,
+                loader: 'file-loader',
+                options: {
+                    name: 'assets/icons/[name].[ext]',
+                },
+            },
         ],
+    },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                commons: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendor',
+                    chunks: 'all',
+                },
+            },
+        },
     },
     plugins: [
         new HTML({

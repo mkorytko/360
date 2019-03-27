@@ -1,12 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
-
 import FrameFour from './Components/Flowers';
-import flowerCoord from './bd/flowers';
-import flower from './assets/images/flower.jpg';
+import flowerCoords from './bd/flowers';
 
-// // contentPhoto={PANORAMA_MODULES_SERVICE.ASSETS_URI + "/images/flower.jpg"}
-render(<FrameFour
-    contentPhoto={flower}
-    coords={flowerCoord} />,
-document.getElementById('frameFour'));
+function makeUrl(url) {
+    if (process.env.NODE_ENV === 'development') {
+        return require(`./assets/${url}`);
+    }
+    return `${PANORAMA_MODULES_SERVICE.ASSETS_URI}/${url}`;
+}
+
+const props = {
+    coords: flowerCoords,
+    contentPhoto: makeUrl('images/flower.jpg'),
+    modalBG: makeUrl('icons/modalBG.svg'),
+    playBtn: makeUrl('icons/playBtn.png'),
+    prestartBg: makeUrl('images/bgPart4.jpg'),
+};
+
+render(<FrameFour {...props} />, document.getElementById('frameFour'));

@@ -41,7 +41,7 @@ export default [
         costFloat: "1",
         measure: "шт",
         sizeItem: "0,75л",
-        src: "http://bioveld.com.ua/wp-content/uploads/2016/10/Robby-Bubble-Tropical.jpg",
+        src: "https://bioveld.com.ua/wp-content/uploads/2016/10/Robby-Bubble-Tropical.jpg",
     },
     {
         id: 2,

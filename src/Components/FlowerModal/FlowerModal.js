@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Canvas from './Canvas';
-import modalBG from '../../assets/icons/modalBG.svg';
 
-const FlowerModal = ({ showModal, closeModal, goods }) => (
+const FlowerModal = ({ showModal, closeModal, goods, modalBG }) => (
     <div
         className={`modal-window ${showModal ? 'modal-show' : 'modal-hide'}`}>
         <div className="modal-wrapper">
+            <i
+                onClick={closeModal}
+                className="modal-header-btn_cancel">
+                +
+            </i>
             <div className="modal-window-header">
                 <h4 className="modal-window-header_info">Информация о товаре</h4>
-                <i
-                    onClick={closeModal}
-                    className="modal-header-btn_cancel" />
             </div>
             <div className="modal-window-body">
                 <Canvas />
