@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import FrameFour from './Components/Flowers';
+import FrameFour from './Components/Marzipano/Flowers';
 import flowerCoords from './bd/flowers';
 
 function makeUrl(url) {

@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import FrameOne from './Components/FrameOne';
+import FrameOne from './Components/Marzipano/FrameOne';
 import products1 from './bd/products1';
 
-import FrameTwo from './Components/FrameTwo';
+import FrameTwo from './Components/Marzipano/FrameTwo';
 import products2 from './bd/products2';
 
-import FrameThree from './Components/FrameThree';
+import FrameThree from './Components/Marzipano/FrameThree';
 import products3 from './bd/products3';
 
 function makeUrl(url) {

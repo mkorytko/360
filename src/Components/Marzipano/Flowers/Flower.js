@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Marzipano from 'marzipano';
-import Modal from '../Modal/Modal';
-import Prestart from '../Prestart';
+import FlowerModal from '../../FlowerModal';
+import Prestart from '../../Prestart';
 
 const limiter = Marzipano.RectilinearView.limit.traditional(
     2048,
@@ -24,14 +24,17 @@ const view = new Marzipano.RectilinearView(initialView, limiter);
 
 let scene;
 
-class Marz extends Component {
+class Flower extends Component {
     static propTypes = {
         contentPhoto: PropTypes.string,
+        modalBG: PropTypes.string,
+        playBtn: PropTypes.string,
+        prestartBg: PropTypes.string,
         coords: PropTypes.array,
     }
 
     state = {
-        goods: null,
+        goods: {},
         showModal: false,
         preStart: true,
     }
@@ -58,17 +61,33 @@ class Marz extends Component {
         }
     }
 
+    cropSpot = ({
+        x, y, w, h,
+    }) => {
+        const img = document.getElementById('source');
+        const el = document.getElementById('canvas');
+        const ctx = el.getContext('2d');
+        ctx.drawImage(img, x, y, w, h, 5, 5, 80, 90);
+    }
+
     renderHotspots = () => {
         this.props.coords.forEach((spot) => {
             const container = document.createElement('div');
             container.classList.add('hotspot');
-            container.classList.add('in-sale');
+            if (spot.stock > 0) {
+                container.classList.add('in-sale');
+            } else {
+                container.classList.add('sales');
+                container.innerHTML = '<span>:`(</span>';
+            }
             container.style.width = `${spot.size.width}px`;
             container.style.height = `${spot.size.height}px`;
             container.style.lineHeight = `${spot.size.height - 4}px`;
             container.addEventListener('click', () => {
-                this.setState({ goods: spot });
-                this.setShowModal();
+                if (spot.stock) {
+                    this.setState({ goods: spot });
+                    this.setShowModal();
+                }
             });
             scene
                 .hotspotContainer()
@@ -76,13 +95,20 @@ class Marz extends Component {
         });
     };
 
-    setShowModal = () => this.setState((state) => ({ showModal: !state.showModal }))
-
     showPanoram = () => this.setState({ preStart: false });
+
+    setShowModal = () => {
+        this.setState(
+            (state) => ({ showModal: !state.showModal }),
+            () => {
+                this.cropSpot(this.state.goods.cropView);
+            },
+        );
+    }
 
     render() {
         const { showModal, goods, preStart } = this.state;
-        const { playBtn, modalBG, prestartBg } = this.props;
+        const { modalBG, playBtn, prestartBg } = this.props;
         return (
             <React.Fragment>
                 <div className="marzipano-wrapper">
@@ -99,14 +125,19 @@ class Marz extends Component {
                         </div>
                     </div>
                 </div>
-                <Modal
+                <FlowerModal
                     modalBG={modalBG}
                     goods={goods}
                     showModal={showModal}
                     closeModal={this.setShowModal} />
+                <img
+                    id="source"
+                    style={{ display: 'none' }}
+                    src={this.props.contentPhoto}
+                    alt="flower" />
             </React.Fragment>
         );
     }
 }
 
-export default Marz;
+export default Flower;

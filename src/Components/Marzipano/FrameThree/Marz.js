@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Marzipano from 'marzipano';
-import Modal from '../Modal/Modal';
-import Prestart from '../Prestart';
+import Modal from '../../Modal/Modal';
+import Prestart from '../../Prestart';
 
 const limiter = Marzipano.RectilinearView.limit.traditional(
     2048,
@@ -27,6 +27,9 @@ let scene;
 class Marz extends Component {
     static propTypes = {
         contentPhoto: PropTypes.string,
+        modalBG: PropTypes.string,
+        playBtn: PropTypes.string,
+        prestartBg: PropTypes.string,
         coords: PropTypes.array,
     }
 
@@ -98,7 +101,6 @@ class Marz extends Component {
                     </div>
                 </div>
                 <Modal
-                playBtn
                     modalBG={modalBG}
                     goods={goods}
                     showModal={showModal}

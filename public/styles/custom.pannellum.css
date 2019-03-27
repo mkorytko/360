@@ -1,0 +1,17 @@
+#pannellum-wrapper{
+    width: 100%;
+    height: 500px;
+}
+.custom_hotspot {
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+.custom_hotspot:hover {
+    background: rgba(250,250,250,0.4);
+}
+.pannellum-custom_spot{
+    display: block;
+    border: 2px solid lime;
+}

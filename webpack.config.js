@@ -3,8 +3,9 @@ const HTML = require('html-webpack-plugin');
 
 const base = {
     entry: {
-        products: './src/index.js',
-        flowers: './src/flower.js',
+        // products: './src/index.js',
+        // flowers: './src/flower.js',
+        pannellum: './src/pannellum.js',
     },
     output: {
         path: path.resolve(__dirname, 'public'),
