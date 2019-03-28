@@ -5,8 +5,8 @@ import Modal from '../../Modal/Modal';
 class FrameOne extends Component {
     static propTypes = {
         contentPhoto: PropTypes.string,
-        prestartBg: PropTypes.string,
         modalBG: PropTypes.string,
+        prestartBg: PropTypes.string,
         coords: PropTypes.array,
     }
 
@@ -51,7 +51,7 @@ class FrameOne extends Component {
         const hotspots = this.props.coords.map((coord) => ({
             pitch: coord.shift.pitch,
             yaw: coord.shift.yaw,
-            type: 'scene',
+            type: 'info',
             cssClass: 'custom_hotspot',
             createTooltipFunc: (e) => this.hideToolTip(e, coord.size, coord),
         }));

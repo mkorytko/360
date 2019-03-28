@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Modal from '../../Modal/Modal';
 
-class FrameOne extends Component {
+class FrameTwo extends Component {
     static propTypes = {
         contentPhoto: PropTypes.string,
-        prestartBg: PropTypes.string,
         modalBG: PropTypes.string,
+        prestartBg: PropTypes.string,
         coords: PropTypes.array,
     }
 
@@ -53,6 +53,7 @@ class FrameOne extends Component {
             yaw: coord.shift.yaw,
             type: 'scene',
             cssClass: 'custom_hotspot',
+            hotSpotDebug: true,
             createTooltipFunc: (e) => this.hideToolTip(e, coord.size, coord),
         }));
         return hotspots;
@@ -79,4 +80,4 @@ class FrameOne extends Component {
         );
     }
 }
-export default FrameOne;
+export default FrameTwo;
