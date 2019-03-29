@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Marzipano from 'marzipano';
 import Modal from '../Modal/Modal';
 import Prestart from '../Prestart';
+import Marzipano from '../../vendor/src';
 
 const limiter = Marzipano.RectilinearView.limit.traditional(
     2048,

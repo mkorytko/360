@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Marzipano from 'marzipano';
+import Marzipano from '../../vendor/src';
 import Modal from '../Modal/Modal';
 import Prestart from '../Prestart';
 

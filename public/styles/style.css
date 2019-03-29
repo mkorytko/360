@@ -9,20 +9,11 @@
 }
 .marzipano-wrapper{
     width: 100%;
+    height: 100%;
 }
 .marzipano-box{
-    height: 500px;
-    position: relative;
-}
-#pannellum-box{
-    width: 800px;
-    height: 500px;
-    position: relative;
-    margin: auto;
-}
-#pannellum-wrapper{
-    width: 100%;
     height: 100%;
+    position: relative;
 }
 .marzipano{
     position: absolute;
@@ -63,7 +54,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     transition: opacity 0.2s, visibility 0.2s;
 }
 .modal-show{
@@ -102,12 +93,17 @@
     cursor: pointer;
     right: 10px;
     top: 0;
-    display: inline-block;
-    background: #fff;
+    padding: 0;
+    border: none;
+    background: transparent;
     font-size: 1.4rem;
     text-align: center;
     transform: rotate(45deg);
     transition: background 0.2s;
+}
+.modal-header-btn_cancel:focus{
+    outline: none;
+    background: transparent;
 }
 .modal-window-body{
     display: flex;
@@ -196,7 +192,7 @@
     width: 100%;
     height: 100%;
     background-position: center;
-    background-size: 101%;
+    background-size: cover;
     background-repeat: no-repeat;
     margin: 0;
     -webkit-filter: grayscale(.75);

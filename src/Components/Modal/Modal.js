@@ -6,11 +6,12 @@ const Modal = ({ showModal, closeModal, goods, modalBG }) => (
         {
             showModal && (
                 <div className="modal-wrapper">
-                    <i
+                    <button
+                        type="button"
                         onClick={closeModal}
                         className="modal-header-btn_cancel">
                         +
-                    </i>
+                    </button>
                     <div className="modal-window-header">
                         <h4 className="modal-window-header_info">Информация о товаре</h4>
                     </div>

@@ -1,0 +1,12 @@
+# Keep in sync with .gitignore.
+*~
+.tmp
+.DS_Store
+npm-debug.log
+/tmp/*
+/build/*
+/docs/*
+/test/test_suite.js
+
+# Publish build to npm.
+!/dist/marzipano.swf
